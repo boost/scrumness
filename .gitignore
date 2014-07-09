@@ -5,6 +5,7 @@ db/*.sqlite3-journal
 *.log
 tmp
 tmp/**/*
+coverage/
 
 # Documentation
 doc/api
@@ -76,6 +77,7 @@ capybara-*html
 
 #rbenv
 .rbenv-version
+.ruby-version
 
 /config/local_env.rb# Rails
 

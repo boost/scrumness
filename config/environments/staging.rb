@@ -56,8 +56,17 @@ Demo::Application.configure do
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
 
+  config.action_mailer.delivery_method = :smtp
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.smtp_settings = {
+    :address  => "localhost",
+    :domain  => "beta.dnz0a.digitalnz.org",
+    :port  => 25
+  }
+
+  config.action_mailer.default_url_options = { :host => 'beta.dnz0a.digitalnz.org' }
+
 
   # Enable threaded mode
   # config.threadsafe!
@@ -69,10 +78,9 @@ Demo::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  API_HOST = 'http://api.supplejack.boost.co.nz'
-  API_KEY = '6h7_WPx5wQxs1hCyGWNh'
+  API_HOST = 'http://api.dnz0a.digitalnz.org/'
+  API_KEY =  'JASnbUxmsAAwYLjevnCk'
   THUMBNAIL_SERVER_URL = 'http://thumbnails.digitalnz.org'
-
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5

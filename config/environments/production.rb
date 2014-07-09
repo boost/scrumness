@@ -58,6 +58,12 @@ Demo::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.smtp_settings = {
+    :address  => "mailhostprivate.natlib.govt.nz",
+    :port  => 25
+  }
+
+  config.action_mailer.default_url_options = { :host => 'www.digitalnz.org' }
 
   # Enable threaded mode
   # config.threadsafe!
@@ -69,10 +75,9 @@ Demo::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  API_HOST = 'http://api.supplejack.boost.co.nz'
-  API_KEY = '6h7_WPx5wQxs1hCyGWNh'
+  API_HOST = 'http://api.digitalnz.org'
+  API_KEY = 'gV1woMjzQzsbzakmXXpb'
   THUMBNAIL_SERVER_URL = 'http://thumbnails.digitalnz.org'
-
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5

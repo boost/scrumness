@@ -20,7 +20,6 @@ describe RecordsHelper do
       record = mock_record(source_contributor_name: ['Culture', 'Europeana'])
       helper.source_contributor_name(record).should eq(%{<p>Culture, Europeana</p>})
     end
-
   end
 
   describe '#record_thumbnail' do
@@ -70,6 +69,16 @@ describe RecordsHelper do
 
       @search.stub(:options) { {text: 'fish'} }
       helper.record_thumbnail(record, @search).should match('<a href="\/records\/1\?search%5Btext%5D=fish">')
+    end
+
+    context '#date_parser_for' do
+      it "should return the same string if its not a date" do
+        helper.date_parser_for("not a date string").should eq "not a date string"
+      end
+
+      it "should return date formated string" do
+        helper.date_parser_for("05-02-1986").should eq "05 Feb 1986"
+      end
     end
 
   end

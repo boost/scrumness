@@ -7,12 +7,18 @@
 # http://digitalnz.org/supplejack
 
 Demo::Application.routes.draw do
-  root to: 'records#home'
-  resources :records, only: [:index, :show]
+  devise_for :users, controllers: { registrations: 'registrations'}
 
-  match 'about', to: 'static_pages#about'
-  match 'contact', to: 'static_pages#contact'
-  match 'become_a_partner', to: 'static_pages#become_a_partner'
-  match 'terms', to: 'static_pages#terms'
-  match 'base_template', to: 'static_pages#base_template'
+  root to: 'records#home'
+  resources :records,   only: [:index, :show]
+  resources :user_sets, only: [:show, :create, :index] do
+    resources :set_items, only: [:create]
+  end
+
+  get '/about', to: 'static_pages#about'
+  get '/contact', to: 'static_pages#contact'
+  get '/become_a_partner', to: 'static_pages#become_a_partner'
+  get '/terms', to: 'static_pages#terms'
+  get '/base_template', to: 'static_pages#base_template'
+
 end

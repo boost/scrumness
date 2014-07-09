@@ -24,5 +24,9 @@
 //= require jquery_ujs
 //= require jquery.masonry.min
 //= require jquery.infinitescroll
-//= require main
-//= require records.js
+//= require foundation
+//= require_tree .
+$(function() {
+  $(document).foundation();
+  addToSet.init();
+});
