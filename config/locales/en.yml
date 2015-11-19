@@ -10,10 +10,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  site_title: "Demo"
+  site_title: "Scrumness"
 
   home:
-    intro: 'This website demo is part of the standard Supplejack platform that can aggregate data and content from many different sources.'
+    intro: 'See how your Scrum feels'
 
   user_sets:
     creator: 'Creator:'
@@ -42,7 +42,7 @@ en:
     related_results:    "Related results"
     see_related_items:  "See related items"
 
-    enter_search:       "Enter your search..."
+    enter_search:       "Enter code.."
 
     from:               "From"
     by:                 "By"

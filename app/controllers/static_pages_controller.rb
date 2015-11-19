@@ -10,6 +10,10 @@
 
 # StaticPage controller deals with the default info pages
 class StaticPagesController < ApplicationController
+  def home
+    @search = search
+  end
+
   def become_a_partner
   end
 
@@ -23,5 +27,8 @@ class StaticPagesController < ApplicationController
   end
 
   def base_template
+  end
+
+  def confirm_code
   end
 end

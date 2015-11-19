@@ -53,7 +53,7 @@ footer {
 			box-sizing: border-box;
 		}
 		.search-button {
-			background: url("../assets/search-icon.svg") center center no-repeat;
+			background: url("../assets/button-arrow.png") center center no-repeat;
 			background-size: 3.5em;
 			width: 4em;
 			height: 4em;
@@ -63,9 +63,9 @@ footer {
 			border: none;
 			text-indent: -999em;
 			margin-top: -.5em;
-			-webkit-box-shadow: -14px 0px 20px -6px rgba(0, 0, 0, 0.45);
+/*			-webkit-box-shadow: -14px 0px 20px -6px rgba(0, 0, 0, 0.45);
 			-moz-box-shadow: -14px 0px 20px -6px rgba(0, 0, 0, 0.45);
-			box-shadow: -14px 0px 20px -6px rgba(0, 0, 0, 0.45);
+			box-shadow: -14px 0px 20px -6px rgba(0, 0, 0, 0.45);*/
 		}
 		input[placeholder], [placeholder], *[placeholder] {
 			color: #666;
