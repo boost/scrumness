@@ -12,7 +12,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :search
   after_filter :store_location
 
   def store_location
@@ -30,16 +29,5 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(*)
     session[:previous_url] || root_path
-  end
-
-  def search(special_params = nil)
-    @search ||= Search.new(special_params || params[:search] || params)
-  end
-
-  def current_sj_user(user_id = nil)
-    @current_sj_user ||= begin
-                           user = user_id ? User.find(user_id) : current_user
-                           Supplejack::User.new({ authentication_token: user.api_key }) if user
-                         end
   end
 end

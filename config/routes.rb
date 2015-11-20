@@ -22,4 +22,5 @@ Demo::Application.routes.draw do
   get '/base_template', to: 'static_pages#base_template'
   get '/confirm-code', to: 'static_pages#confirm_code'
 
+  resources :projects
 end
