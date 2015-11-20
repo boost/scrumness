@@ -10,16 +10,10 @@ Demo::Application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations'}
 
   root to: 'static_pages#home'
-  # resources :records,   only: [:index, :show]
-  # resources :user_sets, only: [:show, :create, :index] do
-  #   resources :set_items, only: [:create]
-  # end
 
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
-  get '/become_a_partner', to: 'static_pages#become_a_partner'
   get '/terms', to: 'static_pages#terms'
-  get '/base_template', to: 'static_pages#base_template'
   get '/confirm-code', to: 'static_pages#confirm_code'
 
   resources :projects
