@@ -28,6 +28,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(*)
-    session[:previous_url] || root_path
+    projects_path
+    # session[:previous_url] || root_path
   end
 end
