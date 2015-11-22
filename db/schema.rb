@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20151120022748) do
 
+  create_table "api_keys", force: true do |t|
+    t.integer  "user_id"
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "terms",      default: true
+  end
+
   create_table "projects", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -26,6 +34,11 @@ ActiveRecord::Schema.define(version: 20151120022748) do
     t.integer  "role"
     t.text     "comment"
     t.integer  "sprint_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "records", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -56,6 +69,8 @@ ActiveRecord::Schema.define(version: 20151120022748) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
