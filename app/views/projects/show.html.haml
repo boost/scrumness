@@ -12,4 +12,6 @@
       %li
         = link_to 'Edit', edit_project_path(@project.id), class: 'button round tiny'
       %li
-        = link_to 'Delete', edit_project_path(@project.id), class: 'button alert round tiny'      
+        = link_to 'Delete', edit_project_path(@project.id), data: {confirm: "This will permenantly delete project #{@project.name}. Are you sure?"}, class: 'button alert round tiny'      
+
+    = link_to 'Create Sprint', new_project_sprint_path(project_id: @project.id), class: 'button round tiny'
