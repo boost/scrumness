@@ -19,5 +19,18 @@ class StaticPagesController < ApplicationController
   end
 
   def confirm_code
+    @sprint = Sprint.find_by_token(params[:code])
+
+    if @sprint
+      if @sprint.votes != 0
+        redirect_to new_project_sprint_review_path(@sprint.project, @sprint)
+      else
+        flash[:notice] = "Review has been expired"
+        redirect_to root_path
+      end
+    else
+      flash[:danger] = "This token dosent exist"      
+      redirect_to root_path
+    end
   end
 end

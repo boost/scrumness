@@ -1,0 +1,25 @@
+%br
+.row
+  .medium-8.columns
+    .row
+      .small-6.columns
+        %h4
+          = @review.role == 'yes' ? 'You are a PO' : 'You are not a PO'
+
+    .row
+      .small-12.columns
+        %h4 
+          = "You rated this sprint as #{@review.score}/10"
+    .row
+      .small-12.columns
+        %h5 
+          = @review.comment
+          
+
+  .medium-4.columns
+    %h2 This is a Preview of your sprint review
+    .help-inset
+      Thanks for your input
+      %br
+      We will use this to rate your Scrum proformance over time
+      %br

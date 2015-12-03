@@ -1,9 +1,13 @@
 class Sprint < ActiveRecord::Base
   belongs_to :project
-  has_many :ratings
+  has_many :reviews
   # has_one :token
 
-  before_save :generate_token
+  before_create :generate_token
+
+  def decrement_votes
+    self.update_attributes(votes: self.votes-=1)
+  end
 
   def generate_token
     while true

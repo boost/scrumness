@@ -10,10 +10,16 @@
 
 	%body{ class: yield(:body_class) }
 		= render "shared/header"
-		- if notice
-			%p.alert.alert-success= notice
-		- if alert
-			%p.alert.alert-danger= alert
+		/ - if notice
+		/ 	%p.alert.alert-success= notice
+		/ - if alert
+		/ 	%p.alert.alert-danger= alert
+
+		- flash.each do |key, value|
+			.alert{ :class => "alert-#{key}" }
+				%button.close{ :data => { :dismiss => "alert" } } x
+				%strong
+					= value
 
 		.main= yield
 

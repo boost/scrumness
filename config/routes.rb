@@ -8,7 +8,10 @@ Demo::Application.routes.draw do
   get '/terms', to: 'static_pages#terms'
   get '/confirm-code', to: 'static_pages#confirm_code'
 
+
   resources :projects do
-    resources :sprints
+    resources :sprints do
+    	resources :reviews
+    end
   end
 end

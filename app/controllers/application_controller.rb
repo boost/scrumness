@@ -31,4 +31,12 @@ class ApplicationController < ActionController::Base
     projects_path
     # session[:previous_url] || root_path
   end
+
+  def find_project
+    @project = Project.find(params[:project_id])
+  end
+
+  def find_sprint
+    @sprint = Sprint.find(params[:sprint_id])
+  end
 end
