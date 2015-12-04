@@ -5,9 +5,18 @@ class Sprint < ActiveRecord::Base
 
   before_create :generate_token
 
-  def decrement_votes
-    self.update_attributes(votes: self.votes-=1)
+  # def incremented_voted
+  #   self.update_attributes(voted: self.voted += 1)
+  # end
+
+ def role_rating(po = true)
+  reviews = self.reviews.where(role: po ? 'yes' : 'no')
+  unless reviews.empty?
+    reviews.map {|review| review.score}.reduce(:+) / reviews.count
+  else
+    0
   end
+ end
 
   def generate_token
     while true

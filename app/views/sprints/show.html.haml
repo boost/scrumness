@@ -1,17 +1,31 @@
+%br
 .row
-  .medium-6.columns
-    %h1
-      = @sprint.created_at
-    = @sprint.token
+  .medium-8.columns
+    .row
+      .small-6.columns
+        %h4
+          = "Token: #{@sprint.token}"
+    .row
+      .small-6.columns
+        %h4 
+          = "Votes: #{@sprint.reviews.count} / #{@sprint.votes}"
+    .row
+      .small-6.columns
+        %h4 
+          = "Rating: #{@sprint.rating} / 10"          
+    
+    %hr
 
+    .row
+      %h2 Comments
+      .small-6.columns
+        - @sprint.reviews.each do |review| 
+          = review.comment
+          %br  
 
-  .medium-6.columns
-    %h2 Manage
-
-    / %ul.button-group.round
-    /   %li
-    /     = link_to 'Edit', edit_project_path(@project.id), class: 'button round tiny'
-    /   %li
-    /     = link_to 'Delete', edit_project_path(@project.id), data: {confirm: "This will permenantly delete project #{@project.name}. Are you sure?"}, class: 'button alert round tiny'      
-
-    / = link_to 'Create Sprint', new_project_sprint_path(project_id: @project.id), class: 'button round tiny'
+  .medium-4.columns
+    %strong Project:
+    = @project.name
+    %br
+    %strong Sprint:
+    = @sprint.created_at.strftime("%d %b %Y")

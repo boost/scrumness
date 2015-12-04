@@ -12,7 +12,6 @@ class ReviewsController < ApplicationController
 
 	def create
 		review = @sprint.reviews.create(review_params)
-		@sprint.decrement_votes
 		redirect_to project_sprint_review_path(@project, @sprint, review)
 	end
 

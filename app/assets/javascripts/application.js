@@ -26,6 +26,7 @@
 //= require jquery.infinitescroll
 //= require foundation
 //= require_tree .
+
 $(function() {
   $(document).foundation();
   addToSet.init();

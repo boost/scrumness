@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203205800) do
+ActiveRecord::Schema.define(version: 20151204003720) do
 
   create_table "projects", force: true do |t|
     t.string   "name"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20151203205800) do
     t.datetime "updated_at"
     t.string   "token"
     t.integer  "votes"
+    t.float    "rating",     limit: 24, default: 0.0
   end
 
   create_table "tokens", force: true do |t|
