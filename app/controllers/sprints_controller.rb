@@ -19,6 +19,6 @@ class SprintsController < ApplicationController
   end
 
   def sprint_params
-    params.require(:sprint).permit(:votes)
+    params.require(:sprint).permit(:description, :votes)
   end  
 end

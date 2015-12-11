@@ -13,6 +13,12 @@
           = f.select :votes, (1..100)
 
       .row
+        .small-12.columns
+          %label
+            %strong Description
+          = f.text_field :description          
+
+      .row
         .small-3.columns
           .actions
             = f.submit "Create", class: 'button round'
