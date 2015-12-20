@@ -1,9 +1,11 @@
 module ProjectsHelper
 	def generate_project_graph(project)
-		[
-			{name: "General", data: project.sprints.map { |sprint| [sprint.id, sprint.rating]} },
+		x = [
 		 	{name: "PO", 			data: project.sprints.map { |sprint| [sprint.id, sprint.role_rating]}},
+		 	{name: "General", data: project.sprints.map { |sprint| [sprint.id, sprint.rating, "foo"]} },
 		 	{name: "Dev", 	  data: project.sprints.map { |sprint| [sprint.id, sprint.role_rating(false)]}}
 		 ]
+		 print x
+		 x
 	end
 end

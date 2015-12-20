@@ -17,4 +17,4 @@
     = link_to 'Create Sprint/Review', new_project_sprint_path(project_id: @project.id), class: 'button round tiny'
 
 .row
-  = line_chart generate_project_graph(@project), {library: {hAxis: {title: "Sprints"}, vAxis: {title: "Rating"}}}
+  = line_chart generate_project_graph(@project), {discrete: true, library: {hAxis: {title: "Sprints"}, vAxis: {title: "Rating"}}}
