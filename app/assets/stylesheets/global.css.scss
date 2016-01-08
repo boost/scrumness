@@ -2,6 +2,7 @@
 @import 'media-ranges.scss';
 
 a, button, input, textarea {
+	color: $brand-colour;
 	&:focus {
 		outline: none;
 	}
@@ -9,6 +10,7 @@ a, button, input, textarea {
 
 body {
 	font-family: 'Raleway';
+	background-color: #fafafa;
 }
 footer {
 	padding: 4em 0;
@@ -18,6 +20,11 @@ footer {
 		line-height: 2em;
 	}
 }
+
+.button {
+	background-color: $brand-colour;
+}
+
 .home {
 	height: calc(100vh - 2em);
 	width: 100%;

@@ -19,6 +19,12 @@
 GALLERY STYLES
 **********************/
 
+a, button, input, textarea {
+	color: $brand-colour;
+	&:focus {
+		outline: none;
+	}
+}
 
 #navigation {
   display: none;
