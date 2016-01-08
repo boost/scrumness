@@ -19,10 +19,25 @@
 
                 
       %ul.right.nav-options
-        %li= link_to 'Contact', '/contact'
-        %li= link_to 'About', '/about'
+        / %li= link_to 'Contact', '/contact'
+        / %li= link_to 'About', '/about'
 
         - if user_signed_in?
+          - if controller_name == 'projects'
+            %li.has-dropdown
+              %a= 'Manage Projects'
+              %ul.dropdown
+                %li= link_to 'Add Project', new_project_path
+                - if action_name == 'show'
+                  %li= link_to 'Edit', edit_project_path(@project.id)
+                  %li= link_to 'Delete', edit_project_path(@project.id), data: {confirm: "This will permenantly delete project #{@project.name}. Are you sure?"}  
+
+            - if controller_name == 'projects' && action_name == 'show'
+              %li.has-dropdown
+                %a= 'Manage Sprints'
+                %ul.dropdown
+                  %li= link_to 'Create Sprint', new_project_sprint_path(project_id: @project.id) 
+
           %li.has-dropdown
             %a= current_user.email.split('@').first
             %ul.dropdown
