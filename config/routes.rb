@@ -10,6 +10,7 @@ Demo::Application.routes.draw do
 
 
   resources :projects do
+    resource :graphs, only: [:show]
     resources :sprints do
     	resources :reviews
     end
