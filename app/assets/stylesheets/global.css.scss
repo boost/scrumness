@@ -8,6 +8,21 @@ a, button, input, textarea {
 	}
 }
 
+a:hover {
+	color: $brand-colour-darken;
+	 text-decoration: underline;
+	&:focus {
+		outline: none;
+	}
+}
+
+.button:hover, .input:hover, .textarea:hover {
+	background-color: $brand-colour-darken;
+	&:focus {
+		outline: none;
+	}
+}
+
 body {
 	font-family: 'Raleway';
 	background-color: #fafafa;
@@ -44,12 +59,13 @@ footer {
 			margin: auto 0 auto;
 		}
 	}
+
 	.search {
 		width: 26em;
 		margin: 0 auto;
 		.search-input {
 			box-shadow: none;
-			border: 1px solid #ddddd;
+			border: 3px solid $brand-colour;
 			border-right: none;
 			background-color: #E5E5E5;
 			width: 22em;
@@ -60,16 +76,15 @@ footer {
 			box-sizing: border-box;
 		}
 		.search-button {
-			background: url("../assets/button-arrow.png") center center no-repeat;
-			background-size: 3.5em;
-			width: 4em;
-			height: 4em;
+			background: url("../assets/button-arrow.png") center center no-repeat ;
+			background-size: 2.5em;
+			width: 3em;
+			height: 3em;
 			font-size: 1em;
 			background-color: $brand-colour;
 			outline: none;
 			border: none;
 			text-indent: -999em;
-			margin-top: -.5em;
 /*			-webkit-box-shadow: -14px 0px 20px -6px rgba(0, 0, 0, 0.45);
 			-moz-box-shadow: -14px 0px 20px -6px rgba(0, 0, 0, 0.45);
 			box-shadow: -14px 0px 20px -6px rgba(0, 0, 0, 0.45);*/
@@ -81,6 +96,7 @@ footer {
 				float: left;
 		}
 	}
+
 	.logo {
 		.display-table & {
 			padding: 0 0 .7em 0;
@@ -102,8 +118,15 @@ footer {
 		margin: 4em auto 0 auto;
 	}
 }
-.search {
 
+.close {
+	color: #fafafa;
+	background-color: $brand-colour;
+
+}
+
+.close:hover {
+	background-color: $brand-colour-darken;	
 }
 
 .top-bar .name h1 a {
