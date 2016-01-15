@@ -7,6 +7,14 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @graph = [
+              ["date",  1.0,  5.7,  1, "s2s", "all service to schools sprint"],
+              ["date",  1.0,  5.7,  1, "s2s", "all service to schools sprint"],
+              ["date",  1.0,  5.7,  1, "s2s", "all service to schools sprint"],
+              ["date",  1.0,  5.7,  1, "s2s", "all service to schools sprint"],
+              ["date",  1.0,  5.7,  1, "s2s", "all service to schools sprint"],
+              ["date",  1.0,  5.7,  1, "s2s", "all service to schools sprint"]
+            ]
   end
 
   def new
