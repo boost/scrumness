@@ -7,14 +7,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @graph = [
-              ["date",  1.0,  5.7,  1, "s2s", "all service to schools sprint"],
-              ["date",  1.0,  5.7,  1, "s2s", "all service to schools sprint"],
-              ["date",  1.0,  5.7,  1, "s2s", "all service to schools sprint"],
-              ["date",  1.0,  5.7,  1, "s2s", "all service to schools sprint"],
-              ["date",  1.0,  5.7,  1, "s2s", "all service to schools sprint"],
-              ["date",  1.0,  5.7,  1, "s2s", "all service to schools sprint"]
-            ]
+    @graph = graph
   end
 
   def new
@@ -28,5 +21,12 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:name, :description)
+  end
+
+  def graph
+    @project.sprints.map {|sprint| [sprint.created_at.strftime("%d %b %y"),
+                                    sprint.role_rating, sprint.role_rating(false), 
+                                    sprint.rating, sprint.reviews.count.to_s,
+                                    sprint.description]}
   end
 end
