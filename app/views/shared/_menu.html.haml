@@ -25,12 +25,14 @@
         - if user_signed_in?
           - if controller_name == 'projects'
             %li.has-dropdown
-              %a= 'Manage Projects'
+              %a= action_name == 'show' ? 'Manage Project' : 'Manage Projects'
               %ul.dropdown
-                %li= link_to 'Add Project', new_project_path
                 - if action_name == 'show'
-                  %li= link_to 'Edit', edit_project_path(@project.id)
-                  %li= link_to 'Delete', edit_project_path(@project.id), data: {confirm: "This will permenantly delete project #{@project.name}. Are you sure?"}  
+                  %li= link_to 'Edit this project', edit_project_path(@project.id)
+                  %li= link_to 'Delete this project', edit_project_path(@project.id), data: {confirm: "This will permenantly delete project #{@project.name}. Are you sure?"}
+                  %li= link_to 'Back to projects list', projects_path
+                - else
+                  %li= link_to 'Add Project', new_project_path
 
             - if controller_name == 'projects' && action_name == 'show'
               %li.has-dropdown

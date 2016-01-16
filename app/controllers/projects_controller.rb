@@ -1,5 +1,10 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
+  before_filter :find_project, only: [:edit, :update, :create, :show]
+
+  def new
+    @project = Project.new
+  end
 
   def index
     @projects = current_user.projects
@@ -10,13 +15,15 @@ class ProjectsController < ApplicationController
     @graph = graph
   end
 
-  def new
-    @project = Project.new
-  end
-
   def create
     current_user.projects.create(project_params)
     redirect_to projects_path
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   def project_params
