@@ -1,13 +1,13 @@
 .row
-  .small-3.large-centered.columns
+  .small-10.columns
     %h1
       = @project.name
     = @project.description
-
+  
+  .small-2.columns
+    .button.radius Filter
 
 .row
-  / line_chart generate_project_graph(@project), {discrete: true, library: {hAxis: {title: "Sprints"}, vAxis: {title: "Rating"}}}
-  
   #chart_div{:style => "width:100%;height:300px;"}
 
 
