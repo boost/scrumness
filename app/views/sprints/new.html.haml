@@ -9,7 +9,7 @@
       .row
         .small-3.columns
           %label
-            %strong Votes
+            %strong Voters
           = f.select :votes, (1..100)
 
       .row
@@ -17,6 +17,18 @@
           %label
             %strong Description
           = f.text_field :description          
+
+      .row
+        %h3 Velocity
+        .small-6.columns
+          %label
+            %strong Planned
+          = f.text_field :velocity_planned          
+
+        .small-6.columns
+          %label
+            %strong Achieved
+          = f.text_field :velocity_acheived
 
       .row
         .small-3.columns
