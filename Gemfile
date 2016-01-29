@@ -30,6 +30,7 @@ gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'haml', '~> 4.0.6'
 gem "chartkick"
 gem 'rubocop', require: false
+gem 'zeroclipboard-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.3'

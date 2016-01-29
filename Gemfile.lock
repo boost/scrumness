@@ -220,6 +220,8 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
     will_paginate (3.0.7)
+    zeroclipboard-rails (0.1.1)
+      railties (>= 3.1)
 
 PLATFORMS
   ruby
@@ -259,6 +261,7 @@ DEPENDENCIES
   vcr (= 2.9.0)
   webmock
   will_paginate
+  zeroclipboard-rails
 
 BUNDLED WITH
    1.10.6
