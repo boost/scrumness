@@ -3,9 +3,13 @@
     %h1
       = @project.name
     = @project.description
-  
-  .small-2.columns
-    .button.radius Filter
+
+  %body
+    %div.clearfix
+      %button.filter-btn.button.menu{value: 0} Filters
+    .filter-container.menu.clearfix{style: "display:none"}
+      %button.close
+        ×  
 
 .row
   .small-1.large-centered.columns

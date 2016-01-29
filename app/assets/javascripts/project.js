@@ -28,11 +28,11 @@
       //   0: {targetAxisIndex: 0},
       //   1: {targetAxisIndex: 1}
       // },
-      // vAxes: {
-      //   // Adds titles to each axis.
-      //   0: {title: 'Sprint Rating'},
-      //   1: {title: 'Sprint Rating'}
-      // },
+      vAxes: {
+        // Adds titles to each axis.
+        0: {title: 'Sprint Rating'},
+        1: {title: 'Sprint Rating'}
+      },
       // hAxis: {
       //   //ticks: [new Date(2014, 0), new Date(2014, 1), new Date(2014, 2), new Date(2014, 3),
       //     //      new Date(2014, 4),  new Date(2014, 5), new Date(2014, 6), new Date(2014, 7),
@@ -83,11 +83,11 @@
       //   0: {targetAxisIndex: 0},
       //   1: {targetAxisIndex: 1}
       // },
-      // vAxes: {
-      //   // Adds titles to each axis.
-      //   0: {title: 'Velocity'},
-      //   1: {title: 'Velocity'}
-      // },
+      vAxes: {
+        // Adds titles to each axis.
+        0: {title: 'Velocity'},
+        1: {title: 'Velocity'}
+      },
       // hAxis: {
       //   //ticks: [new Date(2014, 0), new Date(2014, 1), new Date(2014, 2), new Date(2014, 3),
       //     //      new Date(2014, 4),  new Date(2014, 5), new Date(2014, 6), new Date(2014, 7),
