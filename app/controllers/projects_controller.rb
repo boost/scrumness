@@ -12,7 +12,6 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @graph = graph
   end
 
   def create
@@ -36,12 +35,4 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(:name, :description)
   end
-
-  def graph
-    @project.sprints.map {|sprint| [sprint.created_at.strftime("%d %b %y"),
-                                    sprint.role_rating, sprint.role_rating(false), 
-                                    sprint.rating, sprint.reviews.count.to_s,
-                                    sprint.description]}
-  end
-  
 end

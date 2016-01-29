@@ -3,75 +3,39 @@
     %h1
       = @project.name
     %h4
-    = @project.description
-  
-  .small-2.columns
-    .button.radius Filter
+      = @project.description
+
+  %body
+    %div.clearfix
+      %button.filter-btn.button.menu{value: 0} Filters
+    .filter-container.menu.clearfix{style: "display:none; height:200px"} 
+      .row
+        .medium-12.columns{style: "align:center;"}
+          %h5{style: "float:left;"} From
+          %h5{style: "float:right;"} To
+      .row    
+        .medium-12.columns{style: "align:center;"}
+          .range-slider{"data-options" => "display_selector: #sliderOutput3;", "data-slider" => ""}
+            %span.range-slider-handle{:role => "slider", :tabindex => "0"}
+            %span.range-slider-active-segment
+      / .row
+      /   .medium-12.columns{style: "text-align:center;"}
+      /     %p1 Some centered content
+            
+.row
+  .small-12.medium-centered.columns{style: "text-align: center;"}
+    %h3 Rating
+.row
+  #sprint-graph-div
+  / {:style => "width:100%;height:300px;"}
+%br
 
 .row
-  #chart_div{:style => "width:100%;height:500px;"}
+  .small-12.medium-centered.columns{style: "text-align: center;"}
+    %h3 Velocity
+.row
+  #velocity-graph-div
+  / {:style => "width:100%;height:300px;"}
 
-
-#graph{"data-points" => @graph.to_json}
-
-
-%script{:src => "https://www.google.com/jsapi", :type => "text/javascript"}
-:javascript
-  google.load('visualization', '1.1', {packages: ['line', 'corechart']});
-  google.setOnLoadCallback(drawChart);
-
-  function drawChart() {
-    var graph = $('#graph');
-    var graph_data = JSON.parse($('#graph').attr('data-points')); 
-
-    console.log(graph_data);
-
-    var chartDiv = document.getElementById('chart_div');
-    var data = new google.visualization.DataTable();
-
-    data.addColumn('string', 'Sprint End Date');
-    data.addColumn('number', "PO");
-    data.addColumn('number', "Team");
-    data.addColumn('number', "Combined");
-    data.addColumn({type:'string', role:'annotation'});
-    data.addColumn({type:'string', role:'annotationText'});
-
-    data.addRows(graph_data)
-
-    var classicOptions = {
-      //title: 'Average Temperatures and Daylight in Iceland Throughout the Year',
-      curveType: 'function',
-      width: "100%",
-      height: 500,
-      pointSize: 7,
-      // Gives each series an axis that matches the vAxes number below.
-      series: {
-        0: {targetAxisIndex: 0},
-        1: {targetAxisIndex: 1}
-      },
-      vAxes: {
-        // Adds titles to each axis.
-        0: {title: 'Sprint Rating'},
-        1: {title: 'Sprint Rating'}
-      },
-      hAxis: {
-        //ticks: [new Date(2014, 0), new Date(2014, 1), new Date(2014, 2), new Date(2014, 3),
-          //      new Date(2014, 4),  new Date(2014, 5), new Date(2014, 6), new Date(2014, 7),
-            //    new Date(2014, 8), new Date(2014, 9), new Date(2014, 10), new Date(2014, 11),
-              //  new Date(2015, 0)
-               //]
-      },
-      vAxis: {
-        viewWindow: {
-          max: 10
-        }
-      }
-    };
-
-    function drawClassicChart() {
-      var classicChart = new google.visualization.LineChart(chartDiv);
-      classicChart.draw(data, classicOptions);
-    }
-
-    drawClassicChart();
-  }
+#sprint-graph{"data-points" => @project.sprint_graph.to_json}
+#velocity-graph{"data-points" => @project.velocity_graph.to_json}

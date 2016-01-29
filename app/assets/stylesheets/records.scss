@@ -147,20 +147,18 @@ h1 {
 	}
 }
 .filter-container {
-	position: absolute;
+	position: center;
 	background-color: #f0f0f0;
-	width: 100%;
 	z-index: 10;
 	display: none;
 	border: 1px solid $gray;
 	height: 500px;
-	overflow: scroll;
 	margin-top: 0em;
 	opacity: .97;
 	@media only screen and (max-height: 1000px) {
 	-webkit-box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
--moz-box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
-box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
+	box-shadow: inset 0px -112px 53px -82px rgba(0,0,0,0.2);
 	}
 
 	@media only screen and (min-height: 1000px) {
