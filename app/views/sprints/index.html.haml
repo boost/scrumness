@@ -1,0 +1,32 @@
+.row
+	.small-6.large-centered.columns
+		%h3 
+			= @project.name
+		Sprints
+
+		%table
+			%thead
+				%tr
+					%th{:width => "350"} Description
+					%th{:width => "100"} Date
+					%th{:width => "50"} Votes
+					%th{:width => "50"} Rating
+					%th{:width => "75"} Token
+
+			%tbody
+				- @project.sprints.each do |sprint|
+					%tr
+						%td 
+							= link_to sprint.description, project_sprint_path(@project, sprint)
+						%td 
+							= sprint.created_at.strftime("%d %b %Y")
+						%td 
+							= sprint.votes
+						%td 
+							= sprint.rating
+						%td
+							- if sprint.voting_done?
+								= sprint.token							
+							- else
+								%strike 
+									= sprint.token

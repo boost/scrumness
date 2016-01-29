@@ -1,6 +1,6 @@
 class SprintsController < ApplicationController
   before_action :authenticate_user!
-  before_filter :find_project, only: [:new, :create, :show] 
+  before_filter :find_project, only: [:index, :new, :create, :show] 
 
   def index
   end
