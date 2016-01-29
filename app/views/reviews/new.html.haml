@@ -1,51 +1,52 @@
-.row
-  .medium-8.columns
+.sprint_review
+  .row
+    .medium-8.columns
 
-    = form_for [@project, @sprint, @review] do |f|
-      .row
-        .small-6.columns
-          %h3  Are you a PO?
-          = f.radio_button :role, 'yes', id: 'role'
-          = f.label 'Yes'
-          = f.radio_button :role, 'no', id: 'role'
-          = f.label 'No'
+      = form_for [@project, @sprint, @review] do |f|
+        .row
+          .small-6.columns
+            %h3  Are you a PO?
+            = f.radio_button :role, 'yes', id: 'role'
+            = f.label 'Yes'
+            = f.radio_button :role, 'no', id: 'role'
+            = f.label 'No'
+
+        %hr
+
+        .row
+          .small-12.columns
+            %h3 Rate your sprint
+            - 11.times do |i|
+              = f.radio_button :score, i, id: 'score'
+              = f.label i          
+
+        %hr
+
+        .row
+          .small-12.columns
+            %h3 Comment (optional)
+            = f.text_field :comment
+
+        .row
+          .small-3.columns
+            .actions
+              = f.submit "Submit", class: 'button round'
+
+
+
+    .medium-4.columns
+      %h2 Review Your Sprint
+      .help-inset
+        Mark if you are a PO or another team member
+        %br
+        Rate your sprint from 0 to 10
+        %br
+        And you are welcome to comment on the sprint.
 
       %hr
 
-      .row
-        .small-12.columns
-          %h3 Rate your sprint
-          - 11.times do |i|
-            = f.radio_button :score, i, id: 'score'
-            = f.label i          
-
-      %hr
-
-      .row
-        .small-12.columns
-          %h3 Comment (optional)
-          = f.text_field :comment
-
-      .row
-        .small-3.columns
-          .actions
-            = f.submit "Submit", class: 'button round'
-
-
-
-  .medium-4.columns
-    %h2 Review Your Sprint
-    .help-inset
-      Mark if you are a PO or another team member
+      %strong Project:
+      = @project.name
       %br
-      Rate your sprint from 0 to 10
-      %br
-      And you are welcome to comment on the sprint.
-
-    %hr
-
-    %strong Project:
-    = @project.name
-    %br
-    %strong Sprint:
-    = @sprint.created_at.strftime("%d %b %Y")
+      %strong Sprint:
+      = @sprint.created_at.strftime("%d %b %Y")

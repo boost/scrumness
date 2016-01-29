@@ -36,6 +36,10 @@ footer {
 	}
 }
 
+.main{
+	margin: 2em 6em 2em 6em;
+}
+
 .button {
 	background-color: $brand-colour;
 }
@@ -132,6 +136,7 @@ footer {
 .top-bar .name h1 a {
 	font-weight: 800 !important;
 	color: $brand-colour;
+	letter-spacing: 2px;
 }
 .filters-button {
 	margin: 1em 0;
