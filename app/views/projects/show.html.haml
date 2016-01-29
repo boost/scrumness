@@ -3,20 +3,19 @@
     %h1
       = @project.name
 
+    %button.filter-btn.button.menu{value: 0} Filters
+    %br
     .filter-container.menu.clearfix{style: "display:none; height:200px"} 
       .row
         .medium-12.columns{style: "align:center;"}
           %h5{style: "float:left;"} From
           %h5{style: "float:right;"} To
       .row    
-        .medium-12.columns{style: "align:center;"}
+        .medium-10.columns{style: "align:center;"}
           .range-slider{"data-options" => "display_selector: #sliderOutput3;", "data-slider" => ""}
             %span.range-slider-handle{:role => "slider", :tabindex => "0"}
             %span.range-slider-active-segment
-      / .row
-      /   .medium-12.columns{style: "text-align:center;"}
-      /     %p1 Some centered content
-            
+
 .row
   .small-12.medium-centered.columns{style: "text-align: center;"}
     %h3 Rating
