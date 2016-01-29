@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
-  before_filter :find_project, only: [:edit, :update, :show]
+  before_filter :find_project, only: [:edit, :update, :show, :destroy]
 
   def new
     @project = Project.new
@@ -20,6 +20,13 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+
+  end
+
+  def destroy
+    @project.destroy
+    flash[:success] = "Project Deleted"
+    redirect_to projects_path
   end
 
   def update

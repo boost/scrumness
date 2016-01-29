@@ -2,31 +2,35 @@
   .small-10.columns
     %h1
       = @project.name
-    = @project.description
 
-  %body
-    %div.clearfix
-      %button.filter-btn.button.menu{value: 0} Filters
-    .filter-container.menu.clearfix{style: "display:none"}
-      %button.close
-        ×  
-
+    .filter-container.menu.clearfix{style: "display:none; height:200px"} 
+      .row
+        .medium-12.columns{style: "align:center;"}
+          %h5{style: "float:left;"} From
+          %h5{style: "float:right;"} To
+      .row    
+        .medium-12.columns{style: "align:center;"}
+          .range-slider{"data-options" => "display_selector: #sliderOutput3;", "data-slider" => ""}
+            %span.range-slider-handle{:role => "slider", :tabindex => "0"}
+            %span.range-slider-active-segment
+      / .row
+      /   .medium-12.columns{style: "text-align:center;"}
+      /     %p1 Some centered content
+            
 .row
-  .small-1.large-centered.columns
+  .small-12.medium-centered.columns{style: "text-align: center;"}
     %h3 Rating
-
 .row
   #sprint-graph-div
   / {:style => "width:100%;height:300px;"}
+%br
 
 .row
-  .small-1.large-centered.columns
+  .small-12.medium-centered.columns{style: "text-align: center;"}
     %h3 Velocity
-
 .row
   #velocity-graph-div
   / {:style => "width:100%;height:300px;"}
-
 
 #sprint-graph{"data-points" => @project.sprint_graph.to_json}
 #velocity-graph{"data-points" => @project.velocity_graph.to_json}
