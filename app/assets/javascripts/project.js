@@ -14,8 +14,7 @@
     data.addColumn({type:'string', role:'annotation'});
     data.addColumn({type:'string', role:'annotationText'});
 
-    console.log(graph_data);
-    data.addRows([["28Jan16",7,4,5.0,"3","ComponentDecisions"],["28Jan16",7,8,7.0,"3","ComponentDecisionsFollowup"],["28Jan16",8,7,7.0,"5","Designmeeting"],["29Jan16",7,7,7.0,"3","ComponentIntegration"]])
+    data.addRows(graph_data);
 
     var classicOptions = {
       //title: 'Average Temperatures and Daylight in Iceland Throughout the Year',
