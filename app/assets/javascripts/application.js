@@ -33,4 +33,5 @@ $(function() {
   addToSet.init();
 });
 
-Scrumness.Projects.init();
+// Scrumness.Projects.init();
+

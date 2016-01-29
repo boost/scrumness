@@ -38,7 +38,8 @@
               %li.has-dropdown
                 %a= 'Manage Sprints'
                 %ul.dropdown
-                  %li= link_to 'Create Sprint', new_project_sprint_path(project_id: @project.id) 
+                  %li= link_to 'Create New Sprint', new_project_sprint_path(project_id: @project.id)
+                  %li= link_to 'Sprints List', project_sprints_path(project_id: @project.id) 
 
           %li.has-dropdown
             %a= current_user.email.split('@').first

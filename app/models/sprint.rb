@@ -26,4 +26,8 @@ class Sprint < ActiveRecord::Base
     
     self.token = alphanumeric
   end
+
+  def voting_done?
+     self.votes != self.reviews.count
+  end
 end
