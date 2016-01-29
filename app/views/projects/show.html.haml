@@ -28,5 +28,5 @@
   / {:style => "width:100%;height:300px;"}
 
 
-#sprint-graph{"data-points" => [["28 Jan 16",7,4,5.0,"3","Component Decisions"],["28 Jan 16",7,8,7.0,"3","Component Decisions Followup"],["28 Jan 16",8,7,7.0,"5","Design meeting"],["29 Jan 16",7,7,7.0,"3","Component Integration"]].to_json}
+#sprint-graph{"data-points" => @project.sprint_graph.to_json}
 #velocity-graph{"data-points" => @project.velocity_graph.to_json}
