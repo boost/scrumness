@@ -25,9 +25,12 @@
 //= require jquery.masonry.min
 //= require jquery.infinitescroll
 //= require foundation
+//= require scrumness
 //= require_tree .
 
 $(function() {
   $(document).foundation();
   addToSet.init();
 });
+
+Scrumness.Projects.init();
