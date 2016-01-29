@@ -1,5 +1,5 @@
 .row
-  .small-10.columns
+  .small-12.columns
     %h1
       = @project.name
 
@@ -11,7 +11,7 @@
           %h5{style: "float:left;"} From
           %h5{style: "float:right;"} To
       .row    
-        .medium-10.columns{style: "align:center;"}
+        .medium-12.columns
           .range-slider{"data-options" => "display_selector: #sliderOutput3;", "data-slider" => ""}
             %span.range-slider-handle{:role => "slider", :tabindex => "0"}
             %span.range-slider-active-segment
