@@ -1,35 +1,47 @@
 .row
-  .small-12.columns
+  .small-11.columns
     %h1
       = @project.name
 
-    %button.filter-btn.button.menu{value: 0} Filters
-    %br
-    .filter-container.menu.clearfix{style: "display:none; height:200px"} 
-      .row
-        .medium-12.columns{style: "align:center;"}
-          %h5{style: "float:left;"} From
-          %h5{style: "float:right;"} To
-      .row    
-        .medium-12.columns
-          .range-slider{"data-options" => "display_selector: #sliderOutput3;", "data-slider" => ""}
-            %span.range-slider-handle{:role => "slider", :tabindex => "0"}
-            %span.range-slider-active-segment
+  - if user_signed_in?
+    .small-1.large.columns
+      .fixed-action-btn.horizontal.click-to-toggle.custom-btn-top{:style => "bottom: 45px; right: 24px;"}
+        %a.btn-floating.btn-large.red
+          %i.large.mdi-navigation-menu.brand-colour
+        %ul
+          %li
+            = link_to projects_path, title: 'Project List', class: 'btn-floating blue' do
+              %i.material-icons list
+          %li
+            = link_to project_path(@project.id), method: :delete, data: {confirm: "This will permenantly delete project #{@project.name}. Are you sure?"}, title: 'Delete Project', class: 'btn-floating red' do
+              %i.material-icons delete
+          %li
+            = link_to edit_project_path(@project.id), title: 'EditProject', class: 'btn-floating green' do
+              %i.material-icons mode_edit
+  
+.chip.card.brand-colour
+  Rating
+  %i.material-icons stars
+  %i.material-icons stars
+  %i.material-icons stars
 
-.row
-  .small-12.medium-centered.columns{style: "text-align: center;"}
-    %h3 Rating
-.row
+.row.card
   #sprint-graph-div
-  / {:style => "width:100%;height:300px;"}
-%br
 
-.row
-  .small-12.medium-centered.columns{style: "text-align: center;"}
-    %h3 Velocity
-.row
+.chip.card.brand-colour
+  Velocity
+  %i.material-icons trending_up
+
+.row.card
   #velocity-graph-div
-  / {:style => "width:100%;height:300px;"}
+
+.chip.card.brand-colour
+  Velocity vs Rating
+  %i.material-icons shuffle
+
+.row.card
+  #sprint-velocity-graph-div
 
 #sprint-graph{"data-points" => @project.sprint_graph.to_json}
 #velocity-graph{"data-points" => @project.velocity_graph.to_json}
+#sprint-velocity-graph{"data-points" => @project.sprint_velocity_graph.to_json}

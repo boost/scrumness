@@ -14,9 +14,7 @@
         %h4 
           = "Rating: #{@sprint.rating} / 10"          
     
-    %hr
-
-    .row
+    .row.card
       %h2 Comments
       .small-6.columns
         - @sprint.reviews.each do |review| 

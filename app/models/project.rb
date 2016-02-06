@@ -14,4 +14,9 @@ class Project < ActiveRecord::Base
                                 sprint.velocity_planned, sprint.velocity_acheived]
                               }		
 	end
+
+    def sprint_velocity_graph
+        self.sprints.map {|sprint| [sprint.created_at.strftime("%d %b %y"),
+                                    sprint.rating, (sprint.velocity_acheived - sprint.velocity_planned)]}
+    end
 end

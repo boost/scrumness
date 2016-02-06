@@ -1,16 +1,17 @@
 .row
-	.small-6.large-centered.columns
+	.small-12.large-centered.columns
 		%h3 
-			= @project.name
-		Sprints
+			= "#{@project.name} sprints"
 
-		%table
+		%table.card
 			%thead
 				%tr
 					%th{:width => "350"} Description
 					%th{:width => "100"} Date
 					%th{:width => "50"} Votes
 					%th{:width => "50"} Rating
+					%th{:width => "50"} Points Planned
+					%th{:width => "50"} Points Achieved
 					%th{:width => "75"} Token
 
 			%tbody
@@ -24,6 +25,10 @@
 							= sprint.votes
 						%td 
 							= sprint.rating
+						%td
+							= sprint.velocity_planned
+						%td
+							= sprint.velocity_acheived	
 						%td
 							- if sprint.voting_done?
 								= sprint.token							

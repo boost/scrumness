@@ -26,6 +26,8 @@
 //= require jquery.infinitescroll
 //= require foundation
 //= require scrumness
+//= require material-select
+//= require materialize-sprockets
 //= require_tree .
 
 $(function() {

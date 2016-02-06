@@ -1,15 +1,15 @@
 .sprint_review
   .row
-    .medium-8.columns
+    .medium-9.columns
 
       = form_for [@project, @sprint, @review] do |f|
         .row
           .small-6.columns
             %h3  Are you a PO?
-            = f.radio_button :role, 'yes', id: 'role'
-            = f.label 'Yes'
-            = f.radio_button :role, 'no', id: 'role'
-            = f.label 'No'
+            = f.radio_button :role, 'yes', id: 'role-yes'
+            = f.label 'Yes', for: 'role-yes'
+            = f.radio_button :role, 'no', id: 'role-no'
+            = f.label 'No', for: 'role-no'
 
         %hr
 
@@ -17,8 +17,8 @@
           .small-12.columns
             %h3 Rate your sprint
             - 11.times do |i|
-              = f.radio_button :score, i, id: 'score'
-              = f.label i          
+              = f.radio_button :score, i, id: 'score' + i.to_s
+              = f.label i, for: 'score' + i.to_s         
 
         %hr
 
@@ -30,11 +30,11 @@
         .row
           .small-3.columns
             .actions
-              = f.submit "Submit", class: 'button round'
+              = f.submit "Submit", class: 'btn waves-effect waves-light brand-colour'
 
 
 
-    .medium-4.columns
+    .medium-3.columns
       %h2 Review Your Sprint
       .help-inset
         Mark if you are a PO or another team member

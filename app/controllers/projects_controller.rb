@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :show
   before_filter :find_project, only: [:edit, :update, :show, :destroy]
 
   def new

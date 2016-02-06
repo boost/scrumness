@@ -7,10 +7,8 @@
 
     = form_for [@project, @sprint] do |f|
       .row
-        .small-3.columns
-          %label
-            %strong Voters
-          = f.select :votes, (1..100)
+        .small-12.columns
+          = f.select :votes, (1..100), disabled: 'Please select', selected: 'Please select'        
 
       .row
         .small-12.columns
@@ -33,7 +31,7 @@
       .row
         .small-3.columns
           .actions
-            = f.submit "Create", class: 'button round'
+            = f.submit "Create", class: 'btn waves-effect waves-light brand-colour'
 
 
   .medium-6.columns
@@ -42,3 +40,4 @@
       Number of scrum members who are rating the sprint.
       %br
       The create action will create a sprint and a token for it.
+

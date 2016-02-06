@@ -28,12 +28,12 @@ gem 'activeresource'
 gem 'devise'
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'haml', '~> 4.0.6'
-gem "chartkick"
 gem 'rubocop', require: false
-gem 'zeroclipboard-rails'
+gem 'materialize-sass'
+gem 'rails_utils'
 
 group :assets do
-  gem 'sass-rails',   '~> 4.0.3'
+  # gem 'sass-rails',   '~> 4.0.3'
   gem 'coffee-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.0.3'
   gem 'foundation-rails', '~> 5.4.5.0'
