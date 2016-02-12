@@ -2,6 +2,10 @@
   .small-11.columns
     %h1
       = @project.name
+      - if @project.current_token
+        .chip.card.brand-colour{:style => "color: white; pointer-events: none;"}
+          = @project.current_token
+          %i.material-icons vpn_key
 
   - if user_signed_in?
     .small-1.large.columns

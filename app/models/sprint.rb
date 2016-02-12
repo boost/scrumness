@@ -28,6 +28,6 @@ class Sprint < ActiveRecord::Base
   end
 
   def voting_done?
-     self.votes != self.reviews.count
+     self.votes == self.reviews.count
   end
 end

@@ -31,10 +31,10 @@
 							= sprint.velocity_acheived	
 						%td
 							- if sprint.voting_done?
-								= sprint.token							
-							- else
 								%strike 
 									= sprint.token
+							- else
+								= sprint.token
 
 / .demo-area
 / 	%button#d_clip_button.my_clip_button{"data-clipboard-target" => "fe_text", "data-clipboard-text" => "Default clipboard text from attribute", :title => "Click me to copy to clipboard."}
