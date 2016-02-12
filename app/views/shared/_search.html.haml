@@ -9,4 +9,4 @@
 = form_tag '/confirm-code', :method => :get, class: 'search clearfix' do
   = hidden_field_tag("tab", params[:tab]) if params[:tab].present?
   = text_field_tag "code", '', class: 'search-input', placeholder: t('records.enter_search')
-  = submit_tag "Search", class: "search-button"
+  = submit_tag "Search", class: "search-button z-depth-5"
