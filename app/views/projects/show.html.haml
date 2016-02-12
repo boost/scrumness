@@ -3,7 +3,7 @@
     %h1
       = @project.name
       - if @project.current_token
-        %i.material-icons.small query_builder
+        %i.material-icons.small watch_later
       - else
         %i.material-icons.small thumb_up
 
@@ -25,9 +25,7 @@
 
 .chip.card.brand-colour{:style => "color: white; pointer-events: none;"}
   Rating
-  %i.material-icons stars
-  %i.material-icons stars
-  %i.material-icons stars
+  %i.material-icons poll
 
 .row.card
   #sprint-graph-div
