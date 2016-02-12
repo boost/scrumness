@@ -21,6 +21,6 @@ class Project < ActiveRecord::Base
   end
 
   def current_token
-    self.sprints.last.voting_done? ? nil : self.sprints.last.token
+    (self.sprints.last.voting_done? ? nil : self.sprints.last.token) unless self.sprints.empty?
   end
 end

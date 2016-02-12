@@ -22,7 +22,7 @@ class StaticPagesController < ApplicationController
     @sprint = Sprint.find_by_token(params[:code])
 
     if @sprint
-      if @sprint.voting_done?
+      unless @sprint.voting_done?
         redirect_to new_project_sprint_review_path(@sprint.project, @sprint)
       else
         flash[:warning] = "Review has been expired"
