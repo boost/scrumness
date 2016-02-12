@@ -20,7 +20,6 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-
   end
 
   def destroy
@@ -30,6 +29,8 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    @project.update_attributes(project_params)
+    render "show"
   end
 
   def project_params
