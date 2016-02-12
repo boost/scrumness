@@ -19,7 +19,7 @@
             = link_to edit_project_path(@project.id), title: 'EditProject', class: 'btn-floating green' do
               %i.material-icons mode_edit
   
-.chip.card.brand-colour
+.chip.card.brand-colour{:style => "color: white; pointer-events: none;"}
   Rating
   %i.material-icons stars
   %i.material-icons stars
@@ -28,14 +28,14 @@
 .row.card
   #sprint-graph-div
 
-.chip.card.brand-colour
+.chip.card.brand-colour{:style => "color: white; pointer-events: none;"}
   Velocity
   %i.material-icons trending_up
 
 .row.card
   #velocity-graph-div
 
-.chip.card.brand-colour
+.chip.card.brand-colour{:style => "color: white; pointer-events: none;"}
   Velocity vs Rating
   %i.material-icons shuffle
 
