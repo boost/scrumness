@@ -6,13 +6,14 @@
 		%table.card
 			%thead
 				%tr
-					%th{:width => "350"} Description
+					%th{:width => "250"} Description
 					%th{:width => "100"} Date
+					%th{:width => "75"} Status
 					%th{:width => "50"} Votes
 					%th{:width => "50"} Rating
 					%th{:width => "50"} Points Planned
 					%th{:width => "50"} Points Achieved
-					%th{:width => "75"} Token
+					%th{:width => "50"} token
 
 			%tbody
 				- @project.sprints.each do |sprint|
@@ -21,6 +22,11 @@
 							= link_to sprint.description, project_sprint_path(@project, sprint)
 						%td 
 							= sprint.created_at.strftime("%d %b %Y")
+						%td
+							- if sprint.voting_done?
+								%i.material-icons.small lock
+							- else
+								%i.material-icons.small lock_open
 						%td 
 							= sprint.votes
 						%td 
@@ -30,11 +36,8 @@
 						%td
 							= sprint.velocity_acheived	
 						%td
-							- if sprint.voting_done?
-								%strike 
-									= sprint.token
-							- else
-								= sprint.token
+							= sprint.token								
+
 
 / .demo-area
 / 	%button#d_clip_button.my_clip_button{"data-clipboard-target" => "fe_text", "data-clipboard-text" => "Default clipboard text from attribute", :title => "Click me to copy to clipboard."}

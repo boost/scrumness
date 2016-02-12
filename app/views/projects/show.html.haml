@@ -1,11 +1,11 @@
 .row
-  .small-11.columns
+  .small-10.columns
     %h1
       = @project.name
       - if @project.current_token
-        .chip.card.brand-colour{:style => "color: white; pointer-events: none;"}
-          = @project.current_token
-          %i.material-icons vpn_key
+        %i.material-icons.small query_builder
+      - else
+        %i.material-icons.small thumb_up
 
   - if user_signed_in?
     .small-1.large.columns
@@ -22,7 +22,7 @@
           %li
             = link_to edit_project_path(@project.id), title: 'EditProject', class: 'btn-floating green' do
               %i.material-icons mode_edit
-  
+
 .chip.card.brand-colour{:style => "color: white; pointer-events: none;"}
   Rating
   %i.material-icons stars
