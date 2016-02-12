@@ -255,7 +255,6 @@ DEPENDENCIES
   vcr (= 2.9.0)
   webmock
   will_paginate
-  zeroclipboard-rails
 
 BUNDLED WITH
    1.10.6
